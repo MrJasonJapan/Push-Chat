@@ -17,6 +17,7 @@
 		960F17EF20329349001FE664 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17EE20329349001FE664 /* AlertService.swift */; };
 		960F17F120329436001FE664 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17F020329436001FE664 /* User.swift */; };
 		965EA604203323C0009C6DE0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA603203323C0009C6DE0 /* Persistence.swift */; };
+		965EA60720332F9B009C6DE0 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA60620332F9B009C6DE0 /* UNService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		960F17EE20329349001FE664 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		960F17F020329436001FE664 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		965EA603203323C0009C6DE0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		965EA60520332F72009C6DE0 /* Push Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Push Chat.entitlements"; sourceTree = "<group>"; };
+		965EA60620332F9B009C6DE0 /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		960F17D320328D7A001FE664 /* Push Chat */ = {
 			isa = PBXGroup;
 			children = (
+				965EA60520332F72009C6DE0 /* Push Chat.entitlements */,
 				960F17E020328D7A001FE664 /* Info.plist */,
 				960F17E920328DA2001FE664 /* Model */,
 				960F17E820328D9D001FE664 /* View */,
@@ -87,6 +91,7 @@
 			children = (
 				960F17EE20329349001FE664 /* AlertService.swift */,
 				965EA603203323C0009C6DE0 /* Persistence.swift */,
+				965EA60620332F9B009C6DE0 /* UNService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -144,6 +149,14 @@
 					960F17D020328D7A001FE664 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -189,6 +202,7 @@
 				965EA604203323C0009C6DE0 /* Persistence.swift in Sources */,
 				960F17EB2032904C001FE664 /* MessageCell.swift in Sources */,
 				960F17D520328D7A001FE664 /* AppDelegate.swift in Sources */,
+				965EA60720332F9B009C6DE0 /* UNService.swift in Sources */,
 				960F17EF20329349001FE664 /* AlertService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,11 +340,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3275F3X89L;
+				DEVELOPMENT_TEAM = TB76AL8TCK;
 				INFOPLIST_FILE = "Push Chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.spagettys.Push-Chat";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,11 +356,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3275F3X89L;
+				DEVELOPMENT_TEAM = TB76AL8TCK;
 				INFOPLIST_FILE = "Push Chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.spagettys.Push-Chat";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
