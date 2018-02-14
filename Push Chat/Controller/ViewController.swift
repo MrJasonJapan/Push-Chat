@@ -27,6 +27,19 @@ class ViewController: UIViewController {
             self.messages = messages
             self.tableView.reloadData()
         }
+        
+        //observe for 'internal' notifications.
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleNewMessage(_:)),
+                                               name: NSNotification.Name("internalNotification.newMessage"),
+                                               object: nil)
+        
+        //observe for our reply 'internal' notifications
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleReply(_:)),
+                                               name: NSNotification.Name("internalNotification.reply"),
+                                               object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +65,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Insert message to our model (messages) and tableView, then persist the entire model (messages).
     func insert(_ message: Message) {
         messages.append(message)
         
@@ -61,6 +75,22 @@ class ViewController: UIViewController {
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         
         PersistenceService.shared.save(messages)
+    }
+    
+    @objc
+    func handleNewMessage(_ sender: Notification) {
+        guard let message = sender.object as? Message else { return }
+        insert(message)
+    }
+    
+    @objc
+    func handleReply(_ sender: Notification) {
+        guard let reply = sender.object as? String else { return }
+        let message = Message(body: reply)
+        insert(message)
+        
+        // publish our message to AWS and send to all devices subscribed to the topic.
+        SNSService.shared.publish(message)
     }
 }
 

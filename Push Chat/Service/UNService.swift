@@ -39,6 +39,7 @@ class UNService: NSObject {
     }
     
     func setupActionsAndCategories() {
+        // this section basically lets us make it so when pressing on a notification we have the ability to direcly reply and send a message back.
         let replyAction = UNTextInputNotificationAction(identifier: NotificaitonActionID.reply.rawValue,
                                                         title: "Reply",
                                                         options: .authenticationRequired,
@@ -55,8 +56,22 @@ class UNService: NSObject {
 }
 
 extension UNService: UNUserNotificationCenterDelegate {
+    
+    // triggers when app is in backgaround, and user taps on the notification.
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
         print("un did receive")
+        
+        if let message = Message(userInfo: response.notification.request.content.userInfo) {
+            print(message)
+            post(message)
+        }
+        
+        // check to see if the user try to reply using the .reply action.
+        // note: .reply is our only action at this point.
+        if NotificaitonActionID(rawValue: response.actionIdentifier) == .reply {
+            self.postReply(from: response)
+        }
         
         completionHandler()
     }
@@ -65,6 +80,25 @@ extension UNService: UNUserNotificationCenterDelegate {
         
         print("un will present")
         
+        // if the message is sent from ourself, don't present anything
+        let userInfo = notification.request.content.userInfo
+        if let message = Message(userInfo: userInfo), message.sender != User.current.username {
+            print(message)
+            post(message)
+        }
+        
         completionHandler([])
+    }
+    
+    //'Post' a message using our internal notification system, so we can handle it later and insert in into our tableView.
+    func post(_ message: Message) {
+        NotificationCenter.default.post(name: NSNotification.Name("internalNotification.newMessage"), object: message)
+    }
+    
+    //from our reply action, also 'Post' a message using an internal notification (same as the post method above)
+    func postReply(from response: UNNotificationResponse) {
+        guard let textResponse = response as? UNTextInputNotificationResponse else { return }
+        let reply = textResponse.userText
+        NotificationCenter.default.post(name: NSNotification.Name("internalNotification.reply"), object: reply)
     }
 }

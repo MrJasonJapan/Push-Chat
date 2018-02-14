@@ -26,8 +26,21 @@ struct Message {
         self.body = body
     }
     
+    init?(userInfo: [AnyHashable : Any]) {
+        // is userInfo available inside the notification's message.
+        guard let aps = userInfo["aps"] as? [String : Any],
+            let alert = aps["alert"] as? [String : Any],
+            let sender = alert["title"] as? String,
+            let body = alert["body"] as? String
+            else { return nil }
+        
+        // take what we need from userInfo and initialize a standard message
+        self.sender = sender
+        self.body = body
+    }
+    
     func dictionaryRepresentation() -> [String : String] {
-        let dict: [String : String] = ["sender": sender, "body": body]
+        let dict: [String : String] = ["sender" : sender, "body" : body]
         
         return dict
     }
