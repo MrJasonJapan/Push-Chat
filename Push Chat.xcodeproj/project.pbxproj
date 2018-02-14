@@ -20,8 +20,41 @@
 		965EA60720332F9B009C6DE0 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA60620332F9B009C6DE0 /* UNService.swift */; };
 		965EA6092033E30F009C6DE0 /* SNSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA6082033E30F009C6DE0 /* SNSService.swift */; };
 		965EA60B2033FEB2009C6DE0 /* NotificationIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA60A2033FEB2009C6DE0 /* NotificationIDs.swift */; };
+		965EA60D20341E3D009C6DE0 /* KyleAlert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 965EA60C20341E3D009C6DE0 /* KyleAlert.wav */; };
+		965EA61420341F20009C6DE0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965EA61320341F20009C6DE0 /* UserNotifications.framework */; };
+		965EA61620341F20009C6DE0 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965EA61520341F20009C6DE0 /* UserNotificationsUI.framework */; };
+		965EA61920341F20009C6DE0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA61820341F20009C6DE0 /* NotificationViewController.swift */; };
+		965EA61C20341F20009C6DE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965EA61A20341F20009C6DE0 /* MainInterface.storyboard */; };
+		965EA62020341F20009C6DE0 /* Content Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 965EA61220341F20009C6DE0 /* Content Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		965EA625203420FA009C6DE0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17EC20329097001FE664 /* Message.swift */; };
+		965EA62620342114009C6DE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17F020329436001FE664 /* User.swift */; };
+		965EA62720342121009C6DE0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17EA2032904C001FE664 /* MessageCell.swift */; };
 		F6E0D044CC3C9C11828AB0CD /* Pods_Push_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610E547459960A081F14AC1A /* Pods_Push_Chat.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		965EA61E20341F20009C6DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960F17C920328D7A001FE664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965EA61120341F20009C6DE0;
+			remoteInfo = "Content Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		965EA62420341F20009C6DE0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				965EA62020341F20009C6DE0 /* Content Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		610E547459960A081F14AC1A /* Pods_Push_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Push_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +74,13 @@
 		965EA60620332F9B009C6DE0 /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		965EA6082033E30F009C6DE0 /* SNSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSService.swift; sourceTree = "<group>"; };
 		965EA60A2033FEB2009C6DE0 /* NotificationIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIDs.swift; sourceTree = "<group>"; };
+		965EA60C20341E3D009C6DE0 /* KyleAlert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KyleAlert.wav; sourceTree = "<group>"; };
+		965EA61220341F20009C6DE0 /* Content Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		965EA61320341F20009C6DE0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		965EA61520341F20009C6DE0 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		965EA61820341F20009C6DE0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		965EA61B20341F20009C6DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		965EA61D20341F20009C6DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B577EA32D5E3B0F3DC579F2A /* Pods-Push Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat.release.xcconfig"; sourceTree = "<group>"; };
 		D01D6C11094249E08B2A9489 /* Pods-Push Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +91,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E0D044CC3C9C11828AB0CD /* Pods_Push_Chat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965EA60F20341F20009C6DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965EA61620341F20009C6DE0 /* UserNotificationsUI.framework in Frameworks */,
+				965EA61420341F20009C6DE0 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				610E547459960A081F14AC1A /* Pods_Push_Chat.framework */,
+				965EA61320341F20009C6DE0 /* UserNotifications.framework */,
+				965EA61520341F20009C6DE0 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				960F17D320328D7A001FE664 /* Push Chat */,
+				965EA61720341F20009C6DE0 /* Content Extension */,
 				960F17D220328D7A001FE664 /* Products */,
 				3E20E664C13F82DECAA968B9 /* Pods */,
 				92197F454A6645617AE53FB2 /* Frameworks */,
@@ -88,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				960F17D120328D7A001FE664 /* Push Chat.app */,
+				965EA61220341F20009C6DE0 /* Content Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +150,7 @@
 			children = (
 				965EA60520332F72009C6DE0 /* Push Chat.entitlements */,
 				960F17E020328D7A001FE664 /* Info.plist */,
+				965EA60C20341E3D009C6DE0 /* KyleAlert.wav */,
 				960F17E920328DA2001FE664 /* Model */,
 				960F17E820328D9D001FE664 /* View */,
 				960F17E620328D85001FE664 /* Controller */,
@@ -146,6 +200,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		965EA61720341F20009C6DE0 /* Content Extension */ = {
+			isa = PBXGroup;
+			children = (
+				965EA61820341F20009C6DE0 /* NotificationViewController.swift */,
+				965EA61A20341F20009C6DE0 /* MainInterface.storyboard */,
+				965EA61D20341F20009C6DE0 /* Info.plist */,
+			);
+			path = "Content Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,15 +223,34 @@
 				960F17CF20328D7A001FE664 /* Resources */,
 				192A66D16138DCB4C93EE22F /* [CP] Embed Pods Frameworks */,
 				A3B264EFC937598C6EDC80D4 /* [CP] Copy Pods Resources */,
+				965EA62420341F20009C6DE0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				965EA61F20341F20009C6DE0 /* PBXTargetDependency */,
 			);
 			name = "Push Chat";
 			productName = "Push Chat";
 			productReference = 960F17D120328D7A001FE664 /* Push Chat.app */;
 			productType = "com.apple.product-type.application";
+		};
+		965EA61120341F20009C6DE0 /* Content Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965EA62120341F20009C6DE0 /* Build configuration list for PBXNativeTarget "Content Extension" */;
+			buildPhases = (
+				965EA60E20341F20009C6DE0 /* Sources */,
+				965EA60F20341F20009C6DE0 /* Frameworks */,
+				965EA61020341F20009C6DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Content Extension";
+			productName = "Content Extension";
+			productReference = 965EA61220341F20009C6DE0 /* Content Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -191,6 +274,10 @@
 							};
 						};
 					};
+					965EA61120341F20009C6DE0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 960F17CC20328D7A001FE664 /* Build configuration list for PBXProject "Push Chat" */;
@@ -207,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				960F17D020328D7A001FE664 /* Push Chat */,
+				965EA61120341F20009C6DE0 /* Content Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +306,16 @@
 			files = (
 				960F17DF20328D7A001FE664 /* LaunchScreen.storyboard in Resources */,
 				960F17DC20328D7A001FE664 /* Assets.xcassets in Resources */,
+				965EA60D20341E3D009C6DE0 /* KyleAlert.wav in Resources */,
 				960F17DA20328D7A001FE664 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965EA61020341F20009C6DE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965EA61C20341F20009C6DE0 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +395,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		965EA60E20341F20009C6DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965EA61920341F20009C6DE0 /* NotificationViewController.swift in Sources */,
+				965EA62720342121009C6DE0 /* MessageCell.swift in Sources */,
+				965EA625203420FA009C6DE0 /* Message.swift in Sources */,
+				965EA62620342114009C6DE0 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		965EA61F20341F20009C6DE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965EA61120341F20009C6DE0 /* Content Extension */;
+			targetProxy = 965EA61E20341F20009C6DE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		960F17D820328D7A001FE664 /* Main.storyboard */ = {
@@ -315,6 +431,14 @@
 				960F17DE20328D7A001FE664 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		965EA61A20341F20009C6DE0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				965EA61B20341F20009C6DE0 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D01D6C11094249E08B2A9489 /* Pods-Push Chat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B577EA32D5E3B0F3DC579F2A /* Pods-Push Chat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +584,36 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		965EA62220341F20009C6DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TB76AL8TCK;
+				INFOPLIST_FILE = "Content Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat.Content-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		965EA62320341F20009C6DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TB76AL8TCK;
+				INFOPLIST_FILE = "Content Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat.Content-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,6 +636,15 @@
 			buildConfigurations = (
 				960F17E420328D7A001FE664 /* Debug */,
 				960F17E520328D7A001FE664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		965EA62120341F20009C6DE0 /* Build configuration list for PBXNativeTarget "Content Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965EA62220341F20009C6DE0 /* Debug */,
+				965EA62320341F20009C6DE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

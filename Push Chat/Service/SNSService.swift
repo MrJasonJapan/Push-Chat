@@ -71,7 +71,7 @@ class SNSService {
         
         // no badge handling here, they should normally be handled by a local database.
         let dict = ["default" : message.body,
-                    "APNS_SANDBOX" : "{\"aps\" : {\"alert\" : {\"title\" : \"\(message.sender)\", \"body\" : \"\(message.body)\"}, \"sound\" : \"default\", \"category\" : \"\(NotificationCategoryID.reply.rawValue)\"} }"]
+                    "APNS_SANDBOX" : "{\"aps\" : {\"alert\" : {\"title\" : \"\(message.sender)\", \"body\" : \"\(message.body)\"}, \"sound\" : \"KyleAlert.wav\", \"category\" : \"\(NotificationCategoryID.reply.rawValue)\"} }"]
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: dict, options: [])
