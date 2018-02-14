@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         
         //atempt to sign in
         User.current.signIn()
+        
+        //configure the SNS service (necessary for sending messages via SNS)
+        SNSService.shared.configure()
        
         PersistenceService.shared.getMessages { (messages) in
             self.messages = messages
@@ -32,6 +35,8 @@ class ViewController: UIViewController {
         if !User.current.isSignedIn() {
             AlertService.signIn(in: self) {
                 print("SIGNED IN")
+                //after loggin in, register for the SNS service (necessary for sending messages via SNS)
+                SNSService.shared.register()
             }
         }
     }
@@ -41,6 +46,9 @@ class ViewController: UIViewController {
         AlertService.composeAlert(in: self) { (message) in
             print(message)
             self.insert(message)
+            
+            // publish our message to AWS and send to all devices subscribed to the topic.
+            SNSService.shared.publish(message)
         }
     }
     

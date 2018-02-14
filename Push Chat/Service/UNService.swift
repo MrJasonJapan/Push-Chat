@@ -34,6 +34,23 @@ class UNService: NSObject {
         
         let application = UIApplication.shared
         application.registerForRemoteNotifications()
+        
+        setupActionsAndCategories()
+    }
+    
+    func setupActionsAndCategories() {
+        let replyAction = UNTextInputNotificationAction(identifier: NotificaitonActionID.reply.rawValue,
+                                                        title: "Reply",
+                                                        options: .authenticationRequired,
+                                                        textInputButtonTitle: "Send",
+                                                        textInputPlaceholder: "Enter Message")
+        
+        let category = UNNotificationCategory(identifier: NotificationCategoryID.reply.rawValue,
+                                              actions: [replyAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+        
+        unCenter.setNotificationCategories([category])
     }
 }
 

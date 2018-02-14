@@ -37,11 +37,11 @@
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="73" id="c6Y-Vf-m0N" customClass="MessageCell" customModule="Push_Chat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="73"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="80" id="c6Y-Vf-m0N" customClass="MessageCell" customModule="Push_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6Y-Vf-m0N" id="hr6-GS-wcr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYO-vT-xqP">
@@ -54,22 +54,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-nj-yP1">
-                                                    <rect key="frame" x="15" y="32" width="345" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="eKY-z8-hBr"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="15" y="32" width="345" height="37"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="trailing" secondItem="hr6-GS-wcr" secondAttribute="trailingMargin" id="97Z-2b-WZx"/>
-                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="top" secondItem="QYO-vT-xqP" secondAttribute="bottom" id="Ip5-5N-LQF"/>
+                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="top" secondItem="QYO-vT-xqP" secondAttribute="bottom" id="2xb-LY-PyC"/>
+                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="leading" secondItem="hr6-GS-wcr" secondAttribute="leadingMargin" id="8te-Ht-rhW"/>
+                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="trailing" secondItem="hr6-GS-wcr" secondAttribute="trailingMargin" id="FQT-V3-Z9l"/>
                                                 <constraint firstItem="QYO-vT-xqP" firstAttribute="trailing" secondItem="hr6-GS-wcr" secondAttribute="trailingMargin" id="P6s-Li-ql9"/>
-                                                <constraint firstItem="XZS-nj-yP1" firstAttribute="leading" secondItem="hr6-GS-wcr" secondAttribute="leadingMargin" id="VhF-hH-X3F"/>
                                                 <constraint firstItem="QYO-vT-xqP" firstAttribute="leading" secondItem="hr6-GS-wcr" secondAttribute="leadingMargin" id="fn1-FH-9gp"/>
                                                 <constraint firstItem="QYO-vT-xqP" firstAttribute="top" secondItem="hr6-GS-wcr" secondAttribute="topMargin" id="kKY-fn-Gaq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XZS-nj-yP1" secondAttribute="bottom" id="xI8-Zc-psG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

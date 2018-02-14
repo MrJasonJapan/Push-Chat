@@ -18,9 +18,13 @@
 		960F17F120329436001FE664 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F17F020329436001FE664 /* User.swift */; };
 		965EA604203323C0009C6DE0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA603203323C0009C6DE0 /* Persistence.swift */; };
 		965EA60720332F9B009C6DE0 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA60620332F9B009C6DE0 /* UNService.swift */; };
+		965EA6092033E30F009C6DE0 /* SNSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA6082033E30F009C6DE0 /* SNSService.swift */; };
+		965EA60B2033FEB2009C6DE0 /* NotificationIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EA60A2033FEB2009C6DE0 /* NotificationIDs.swift */; };
+		F6E0D044CC3C9C11828AB0CD /* Pods_Push_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610E547459960A081F14AC1A /* Pods_Push_Chat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610E547459960A081F14AC1A /* Pods_Push_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Push_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		960F17D120328D7A001FE664 /* Push Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Push Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		960F17D420328D7A001FE664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		960F17D620328D7A001FE664 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,10 @@
 		965EA603203323C0009C6DE0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		965EA60520332F72009C6DE0 /* Push Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Push Chat.entitlements"; sourceTree = "<group>"; };
 		965EA60620332F9B009C6DE0 /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		965EA6082033E30F009C6DE0 /* SNSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSService.swift; sourceTree = "<group>"; };
+		965EA60A2033FEB2009C6DE0 /* NotificationIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIDs.swift; sourceTree = "<group>"; };
+		B577EA32D5E3B0F3DC579F2A /* Pods-Push Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat.release.xcconfig"; sourceTree = "<group>"; };
+		D01D6C11094249E08B2A9489 /* Pods-Push Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +50,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E0D044CC3C9C11828AB0CD /* Pods_Push_Chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E20E664C13F82DECAA968B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D01D6C11094249E08B2A9489 /* Pods-Push Chat.debug.xcconfig */,
+				B577EA32D5E3B0F3DC579F2A /* Pods-Push Chat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92197F454A6645617AE53FB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				610E547459960A081F14AC1A /* Pods_Push_Chat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		960F17C820328D7A001FE664 = {
 			isa = PBXGroup;
 			children = (
 				960F17D320328D7A001FE664 /* Push Chat */,
 				960F17D220328D7A001FE664 /* Products */,
+				3E20E664C13F82DECAA968B9 /* Pods */,
+				92197F454A6645617AE53FB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +120,7 @@
 				960F17EE20329349001FE664 /* AlertService.swift */,
 				965EA603203323C0009C6DE0 /* Persistence.swift */,
 				965EA60620332F9B009C6DE0 /* UNService.swift */,
+				965EA6082033E30F009C6DE0 /* SNSService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -112,6 +141,7 @@
 			children = (
 				960F17EC20329097001FE664 /* Message.swift */,
 				960F17F020329436001FE664 /* User.swift */,
+				965EA60A2033FEB2009C6DE0 /* NotificationIDs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 960F17E320328D7A001FE664 /* Build configuration list for PBXNativeTarget "Push Chat" */;
 			buildPhases = (
+				29D1B7C5D3C8610DD2FC36AB /* [CP] Check Pods Manifest.lock */,
 				960F17CD20328D7A001FE664 /* Sources */,
 				960F17CE20328D7A001FE664 /* Frameworks */,
 				960F17CF20328D7A001FE664 /* Resources */,
+				192A66D16138DCB4C93EE22F /* [CP] Embed Pods Frameworks */,
+				A3B264EFC937598C6EDC80D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,16 +224,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		192A66D16138DCB4C93EE22F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSSNS/AWSSNS.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSSNS.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29D1B7C5D3C8610DD2FC36AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Push Chat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3B264EFC937598C6EDC80D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Push Chat/Pods-Push Chat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		960F17CD20328D7A001FE664 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				960F17D720328D7A001FE664 /* ViewController.swift in Sources */,
+				965EA60B2033FEB2009C6DE0 /* NotificationIDs.swift in Sources */,
 				960F17ED20329097001FE664 /* Message.swift in Sources */,
 				960F17F120329436001FE664 /* User.swift in Sources */,
 				965EA604203323C0009C6DE0 /* Persistence.swift in Sources */,
 				960F17EB2032904C001FE664 /* MessageCell.swift in Sources */,
+				965EA6092033E30F009C6DE0 /* SNSService.swift in Sources */,
 				960F17D520328D7A001FE664 /* AppDelegate.swift in Sources */,
 				965EA60720332F9B009C6DE0 /* UNService.swift in Sources */,
 				960F17EF20329349001FE664 /* AlertService.swift in Sources */,
@@ -338,12 +429,14 @@
 		};
 		960F17E420328D7A001FE664 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01D6C11094249E08B2A9489 /* Pods-Push Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB76AL8TCK;
 				INFOPLIST_FILE = "Push Chat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,12 +447,14 @@
 		};
 		960F17E520328D7A001FE664 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B577EA32D5E3B0F3DC579F2A /* Pods-Push Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Push Chat/Push Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB76AL8TCK;
 				INFOPLIST_FILE = "Push Chat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.dkapp.Push-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
